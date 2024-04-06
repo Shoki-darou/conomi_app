@@ -27,7 +27,7 @@
       <tr>
         <td><%= question.title %></td>
         <td><%= question.content %></td>
-        <td><%= question.category.name %></td>
+        <td><%= question.category.category_name if question.category %></td>
         <!-- 選択肢や画像の表示 -->
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>

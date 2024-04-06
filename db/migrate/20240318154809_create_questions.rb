@@ -4,8 +4,8 @@ class CreateQuestions < ActiveRecord::Migration[7.0]
       t.string :title, null: false
       t.text :content, null: false
       t.integer :category_id, null: false
-      t.string :choice1, null: false
-      t.string :choice2, null: false
+      t.string :choice1
+      t.string :choice2
       t.string :choice3
       t.string :choice4
       t.string :choice5

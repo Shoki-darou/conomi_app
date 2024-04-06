@@ -32,10 +32,9 @@
             </h3>
         </div>
         <div class="question-details__collection-select">
-            <%= form.label :category_id, class: 'question-details__collection-select-label' do %>
-                <%= form.collection_select :category_id, @category_parent, :id, :category_name, { prompt: "選択して下さい" }, { class: 'question-details__collection-select-input', id: 'category-select-parent', required: "required" } %>
-                <i class="fas fa-chevron-down"></i>
-            <% end %>
+          <%= form.label :category_id, 'カテゴリー', class: 'question-details__collection-select-label' %>
+          <%= form.collection_select :category_id, Category.all, :id, :category_name, { prompt: "選択して下さい" }, class: 'question-details__collection-select-input', id: 'category-select-parent', required: "required" %>
+          <i class="fas fa-chevron-down"></i>
         </div>
         <div class="error-messages" id="error-category"></div>
     </div>

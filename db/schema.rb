@@ -53,8 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_26_161845) do
     t.string "title", null: false
     t.text "content", null: false
     t.integer "category_id", null: false
-    t.string "choice1", null: false
-    t.string "choice2", null: false
+    t.string "choice1"
+    t.string "choice2"
     t.string "choice3"
     t.string "choice4"
     t.string "choice5"
