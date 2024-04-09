@@ -44,8 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_26_161845) do
     t.bigint "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
     t.index ["question_id"], name: "index_categories_on_question_id"
   end
 

@@ -1,5 +1,5 @@
-<%= form_with(model: question, local: true) do |form| %>
-  <% if question.errors.any? %>
+<%= form_with(model: @question, local: true) do |f| %>
+  <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(question.errors.count, 'error') %> prohibited this question from being saved:</h2>
 
@@ -12,40 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= f.label "質問内容" %>
+    <%= f.text_area :content %>
   </div>
 
-<!--
 
-  <div class="question-details">
-    <h3 class="question-details__sub-head">質問の詳細</h3>
-    <div class="question-details__content">
-        <div class="question-details__title">
-            <h3 class="question-details__title-text">
-                カテゴリー
-                <span class="question-details__require">必須</span>
-            </h3>
-        </div>
-        <div class="question-details__collection-select">
-          <%= form.label :category_id, 'カテゴリー', class: 'question-details__collection-select-label' %>
-          <%= form.collection_select :category_id, Category.all, :id, :category_name, { prompt: "選択して下さい" }, class: 'question-details__collection-select-input', id: 'category-select-parent', required: "required" %>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="error-messages" id="error-category"></div>
-    </div>
-</div>
-
--->
+<div class="question-details">
+  <h3 class="question-details__sub-head">質問の詳細</h3>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  </div>
 
   <!-- 選択肢や画像の入力欄を追加 -->
 
   <div class="actions">
-    <%= form.submit %>
+    <<%= f.submit "投稿する" ,class:"btn" %>
   </div>
 <% end %>
