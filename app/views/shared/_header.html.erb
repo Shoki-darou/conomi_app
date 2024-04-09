@@ -1,0 +1,60 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header>
+    <div class="top">
+      <div class="site-name">
+      <%= link_to root_path, class: "site-name" do %>
+        Conomi
+      <% end %>
+      </div>
+      <div class="search">
+        <%= form_tag "#", method: :get do %>
+          <%= text_field_tag :query, nil, placeholder: "検索" %>
+          <%= submit_tag "検索" %>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <div class="nav">
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-item" %>
+        </div>
+      <% else %>
+        <div class="nav">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-item" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "nav-item" %>
+        </div>
+      <% end %>
+      <div class="menu">
+        <span class="menu-item">メニュー</span>
+        <div class="menu-box">
+          <div>
+          <%= link_to "ホーム", root_path, class: "menu-link" %>
+          <a href="#" class="menu-link">新着</a>
+          <a href="#" class="menu-link">カテゴリー一覧</a>
+          <a href="#" class="menu-link">質問履歴</a>
+          <a href="#" class="menu-link">回答履歴</a>
+          <a href="#" class="menu-link">気になる質問</a>
+          <a href="#" class="menu-link">設定</a>
+          <a href="#" class="menu-link">プロフィール</a>
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "menu-link" %>
+          </div>
+        </div>
+      </div>
+      <div class="notifications">
+        <!-- 通知アイコン -->
+        <i class="fa fa-bell-o" aria-hidden="true" id="notification-icon"></i>
+        
+        <!-- お知らせ内容を表示するボックス -->
+        <div class="notification-box">
+            <!-- 「あなたへのお知らせ」 -->
+            <div class="notification-title">あなたへのお知らせ</div>
+            
+            <!-- お知らせ一覧 -->
+            <div class="notification-list">
+              <p>お知らせはありません</p>
+            </div>
+        </div>
+      </div>
+      <div class="new-post">
+        <%= link_to '新規投稿', new_question_path, class: "btn" %>
+      </div>
+    </div>
+  </header>
