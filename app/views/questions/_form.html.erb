@@ -1,0 +1,35 @@
+<%= form_with(model: @question, local: true) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question.errors.count, 'error') %> prohibited this question from being saved:</h2>
+
+      <ul>
+        <% question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label "質問内容" %>
+    <%= f.text_area :content %>
+  </div>
+
+
+<div class="question-details">
+  <h3 class="question-details__sub-head">質問の詳細</h3>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  </div>
+
+  <!-- 選択肢や画像の入力欄を追加 -->
+
+  <div class="actions">
+    <<%= f.submit "投稿する" ,class:"btn" %>
+  </div>
+<% end %>

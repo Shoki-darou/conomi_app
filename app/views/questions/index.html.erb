@@ -6,23 +6,33 @@
         <div class="new-questions">
             <h2>新着順</h2>
             <!-- 新着質問を表示 -->
-            <div class="question">
-                <h3>質問のタイトル</h3>
-                <p>質問の内容</p>
-                <a href="show_question.html">詳細</a>
-            </div>
-            <!-- 他の新着質問も同様に繰り返す -->
+              <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.content %></td>
+        <td><%= question.category.category_name if question.category %></td>
+        <!-- 選択肢や画像の表示 -->
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
         </div>
 
         <div class="popular-questions">
             <h2>回答急上昇</h2>
             <!-- 人気の質問を表示 -->
-            <div class="question">
-                <h3>質問のタイトル</h3>
-                <p>質問の内容</p>
-                <a href="show_question.html">詳細</a>
-            </div>
-            <!-- 他の人気の質問も同様に繰り返す -->
+              <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.content %></td>
+        <td><%= question.category.category_name if question.category %></td>
+        <!-- 選択肢や画像の表示 -->
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
         </div>
     </div>
 
@@ -55,3 +65,4 @@
         </ul>
     </div>
 </div>
+
