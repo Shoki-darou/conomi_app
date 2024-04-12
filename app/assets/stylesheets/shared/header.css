@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .top {
+    width: 1024px; 
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* ヘッダーのスタイル */
+header {
+  background-color: #f8f8f8;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+/* サイト名のスタイル */
+.site-name {
+  font-size: 42px;
+  color: #ffcccc;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.nav-item{
+  text-decoration: none;
+  color: #333;
+}
+
+/* メニューのスタイル */
+.menu {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* メニューアイテムのスタイル */
+.menu-item {
+  font-size: 16px;
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.menu-item:active {
+  color: red;
+}
+
+.menu-box {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  min-width: 190px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  min-width: 160px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu-box.show {
+  display: block;
+}
+
+.menu-link {
+  font-size: 15px;
+  line-height: 25px;
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* 検索欄のスタイル */
+.search {
+  margin-right: auto;
+}
+
+/* 検索入力フィールドのスタイル */
+.search input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* 通知アイコンのスタイル */
+.fa.fa-bell-o {
+  cursor: pointer; /* カーソルをポインターに変更してクリック可能であることを示す */
+}
+
+#notification-icon.clicked {
+  color: red !important;
+}
+
+.notifications {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  min-width: 160px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notification-box.show {
+  display: block;
+}
+
+.notification-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* 新規投稿ボタンのスタイル */
+.new-post {
+  margin-left: auto;
+}
+
+/* 新規投稿ボタンのボタンのスタイル */
+.btn {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* サイト全体のスタイル */
+.site {
+
+  margin: 0 auto; /* 中央揃えにする */
+}

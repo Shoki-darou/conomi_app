@@ -71,6 +71,9 @@ group :test do
   gem "webdrivers"
 end
 
+group :production do
+  gem 'pg'
+end
 
 gem 'devise'
 gem 'ancestry'
@@ -78,4 +81,7 @@ gem 'active_hash'
 
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
+gem 'font-awesome-rails'
+gem 'sassc'
 
