@@ -8,3 +8,33 @@
   <%= link_to "ログイン", new_user_session_path %>
   <%= link_to "新規登録", new_user_registration_path %>
 <% end %>
+
+<h1>Questions</h1>
+
+<%= link_to 'New Question', new_question_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Category</th>
+      <!-- 必要に応じて選択肢や画像のカラムを追加 -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.content %></td>
+        <td><%= question.category.category_name if question.category %></td>
+        <!-- 選択肢や画像の表示 -->
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
