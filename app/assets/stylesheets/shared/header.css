@@ -9,13 +9,13 @@ a {
 
 @media screen and (min-width: 1024px) {
   .top {
-    width: 1024px; 
+    width: 1024px;
     margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .container {
+  .top {
     width: 100%;
     margin: 0 auto;
   }
@@ -175,6 +175,5 @@ header {
 
 /* サイト全体のスタイル */
 .site {
-
   margin: 0 auto; /* 中央揃えにする */
 }

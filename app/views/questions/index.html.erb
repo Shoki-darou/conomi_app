@@ -1,10 +1,57 @@
 <%= render "shared/header" %>
+<div class="index-top">
+  <h1>質問一覧</h1>
 
-<% if user_signed_in? %>
-  <!-- ログインしている場合の表示 -->
-  <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
-<% else %>
-  <!-- ログインしていない場合の表示 -->
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "新規登録", new_user_registration_path %>
-<% end %>
+    <div class="question-list">
+        <div class="new-questions">
+            <h2>新着順</h2>
+            <!-- 新着質問を表示 -->
+            <div class="question">
+                <h3>質問のタイトル</h3>
+                <p>質問の内容</p>
+                <a href="show_question.html">詳細</a>
+            </div>
+            <!-- 他の新着質問も同様に繰り返す -->
+        </div>
+
+        <div class="popular-questions">
+            <h2>回答急上昇</h2>
+            <!-- 人気の質問を表示 -->
+            <div class="question">
+                <h3>質問のタイトル</h3>
+                <p>質問の内容</p>
+                <a href="show_question.html">詳細</a>
+            </div>
+            <!-- 他の人気の質問も同様に繰り返す -->
+        </div>
+    </div>
+
+    <!-- カテゴリー一覧 -->
+    <div class="categories">
+        <h2>カテゴリー</h2>
+        <!-- カテゴリーを表示 -->
+        <ul>
+            <li><a href="#">イラスト、絵画</a></li>
+            <li><a href="#">写真</a></li>
+            <li><a href="#">音楽</a></li>
+            <li><a href="#">映画</a></li>
+            <li><a href="#">TV、エンタメ</a></li>
+            <li><a href="#">ゲーム</a></li>
+            <li><a href="#">読書、文学</a></li>
+            <li><a href="#">グルメ、料理</a></li>
+            <li><a href="#">旅行</a></li>
+            <li><a href="#">ファッション</a></li>
+            <li><a href="#">美容</a></li>
+            <li><a href="#">手芸、クラフト</a></li>
+            <li><a href="#">スポーツ、フィットネス</a></li>
+            <li><a href="#">アウトドア</a></li>
+            <li><a href="#">車、バイク</a></li>
+            <li><a href="#">ガーデニング</a></li>
+            <li><a href="#">ダンス、パフォーマンス</a></li>
+            <li><a href="#">ビジネス、キャリア</a></li>
+            <li><a href="#">趣味の学習、スキル習得</a></li>
+            <li><a href="#">自己啓発、ライフハック</a></li>
+            <li><a href="#">その他</a></li>
+        </ul>
+    </div>
+</div>
